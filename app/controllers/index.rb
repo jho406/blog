@@ -1,7 +1,6 @@
 get '/' do
   # Look in app/views/index.erb
-  @posts = Post.all
-  erb :index
+  redirect to("/posts")
 end
 
 get '/new' do
@@ -9,7 +8,7 @@ get '/new' do
 end
 
 post '/new' do
-  post = Post.new(params[:post])
+  post = Post.create(params[:post])
   tags = params[:tags].split(",")
   tags.each{|name| post.tags.create(:name=>name)}
   redirect to("/")
