@@ -1,16 +1,28 @@
+  <header class="navigation">
+      <nav><h3>tags</h3>
+        <a class= "button button-small" href="/">ALL</a>
+        <%@tags.each do |tag|%>
+        <a class= "button button-small" href="/posts?filter=<%=tag.name%>"><%=tag.name%></a>
+        <%end%>
+      </nav>
+      <h1>Posts</h1>
+      <nav>
+          <a class= "button" href="/posts/new">+ New Post</a>
+      </nav>
+  </header>
+
+
 <div class="container">
   <% @posts.each do |post| %>
   <article>
     <header>
       <h1> <%= post.title %></h1>
-      <span><%=post.created_at.strftime("%Y-%m-%d") %></span>
+      <span><%=post.created_at.strftime("%Y-%m-%d") %> | <a href="/posts/<%= post.id%>">show more</a></span>
     </header>
       <p>
         <%=post.body%>
       </p>
       <div class = "footer">
-        <span><a href="/post/<%=post.id%>/edit">edit</a></span>
-        <%= post.tags.pluck(:name).join(",") %>
       </div>
     </article>
   <%end%>

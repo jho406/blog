@@ -1,12 +1,15 @@
 
-<form method="post">
-  <fieldset>
-    <label for="f_title">title</label>
-    <input id= "f_post_title" name ="post[title]" type="text" value="<%= @post.title%>">
-    <label for="f_post_body">text</label>
-    <textarea id= "f_post_body" name ="post[body]"><%= @post.body%></textarea>
-    <label for="f_tags">tags:</label> 
-    <input id= "f_post_title" name ="tags"type="text" value="<%= @post.tag_str%>">
-  </fieldset>
-  <button type="submit">edit</button>
+<div class="container">
+  <h1>Edit</h1>
+  <form class="new_post" method="post">
+    <div class="form_row">
+    <input id= "f_post_title" name ="post[title]" type="text" placeholder="title" value="<%= @post.title%>">
+    </div>
+
+    <div class="form_row"><textarea id= "f_post_body" name ="post[body]"  placeholder="post body"><%= @post.body%></textarea>
+    </div>
+    <div class="form_row"><input id= "f_post_tags" name ="tags" type="text" placeholder="list of tags seperated by commas" value="<%=@post.tags.pluck(:name).join(",")%>">
+      </div>
+  <button type="submit">Edit</button>
 </form>
+</div>

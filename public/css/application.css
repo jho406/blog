@@ -1,9 +1,48 @@
+body{
+  border-top: 5px solid #2ECC71;
+  font-family: "helvetica neue"
+}
 .container {
   margin: 20px auto;
   width: 600px;
   padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
 }
-th {
-  text-align: left;
+.container p{
+  line-height: 1.5em;  
+  font-size: 18px;
+}
+.navigation {
+  margin: 20px auto;
+  width: 600px;
+  padding: 0px 20px 20px 20px;
+}
+
+.button{
+  color: white;
+  background-color: #2ECC71;
+  padding: 10px;
+  border-radius: 5px;  
+}
+
+a.button:link, a.button:visited, a.button:active {
+  text-decoration: none;
+  /*box-shadow: 1px 2px 5px gray;*/
+} 
+a.button:hover {
+  color: white;
+  background-color:#27AE60;
+}
+
+.button-small{
+  padding: 3px;
+  font-size: 12px;
+}
+
+.form_row{
+  padding-bottom: 20px;
+}
+
+form textarea{
+  width:100%;
+  height:200px;
 }
