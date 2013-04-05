@@ -1,0 +1,12 @@
+
+<form method="post">
+  <fieldset>
+    <label for="f_title">title</label>
+    <input id= "f_post_title" name ="post[title]" type="text" value="<%= @post.title%>">
+    <label for="f_post_body">text</label>
+    <textarea id= "f_post_body" name ="post[body]"><%= @post.body%></textarea>
+    <label for="f_tags">tags:</label> 
+    <input id= "f_post_title" name ="tags"type="text" value="<%= @post.tag_str%>">
+  </fieldset>
+  <button type="submit">edit</button>
+</form>

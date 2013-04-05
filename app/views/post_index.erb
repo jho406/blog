@@ -1,0 +1,17 @@
+<div class="container">
+  <% @posts.each do |post|%>
+  <article>
+    <header>
+      <h1> <%= post.title %></h1>
+      <span><%=post.created_at %></span>
+    </header>
+      <p>
+        <%=post.body%>
+      </p>
+      <div class = "footer">
+        <span><a href="<%=post.id%>/edit">edit</a></span>
+        <%= post.tags.pluck(:name).join(",") %>
+      </div>
+    </article>
+  <%end%>
+</div>
