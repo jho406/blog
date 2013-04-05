@@ -4,4 +4,9 @@ class Post < ActiveRecord::Base
   validates :body, :presence => true
   validates :title, :presence => true
 
+  attr_accessible :title, :body
+
+  def tag_str
+    self.tags.map(&:name).join(",")
+  end
 end
